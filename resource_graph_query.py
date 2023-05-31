@@ -27,6 +27,11 @@ def getresources( strQuery ):
     # Run query
     argResults = argClient.resources(argQuery).data
 
+    # Store query results in a file
+    with open('resource_inventory.txt', 'w') as file:
+        for resource in argResults:
+            file.write(f"{resource}\n")
+
     # Show Python object
     print(argResults)
 
