@@ -35,4 +35,4 @@ def getresources( strQuery ):
     # Show Python object
     print(argResults)
 
-getresources("Resources | project id, name, type, tags")
+getresources("Resources")
