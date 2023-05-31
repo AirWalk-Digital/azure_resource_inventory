@@ -3,12 +3,12 @@ import azure.mgmt.resourcegraph as arg
 
 # Import specific methods and models from other libraries
 from azure.mgmt.resource import SubscriptionClient
-from azure.identity import AzureCliCredential
+from azure.identity import DefaultAzureCredential
 
 # Wrap all the work in a function
 def getresources( strQuery ):
-    # Get your credentials from Azure CLI (development only!) and get your subscription list
-    credential = AzureCliCredential()
+    # Get your credentials from Default Azure Credential (development only!) and get your subscription list
+    credential = DefaultAzureCredential()
     subsClient = SubscriptionClient(credential)
     subsRaw = []
     for sub in subsClient.subscriptions.list():
